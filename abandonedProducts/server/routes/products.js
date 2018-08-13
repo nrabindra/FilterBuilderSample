@@ -11,21 +11,17 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/getAbandonedProducts',(req, res)=>{
-	Cart.find({},(err, data)=>{
-		let products = getProductCount(data);
+	Cart.find({},(err, data)=>{//mongo call
+		let products = getProductCount(data);//operation to get count of customers who abandoned products
 		let productIDs = [];
 		for(let key in products){
-			productIDs.push(key);
+			productIDs.push(key);//creating array of product IDs
 		}
 		getObjectByID(Product, productIDs).then((objects)=>{
-			console.log("Here are objs", objects);
-			res.send(mapObjectsToData(objects, products));
-			
-
+			res.send(mapObjectsToData(objects, products));//Adding product meta data to product count before sending			
 		}).catch((err)=>{
 			console.log(err);
-		});
-		
+		});	
 		});
 	});
 
