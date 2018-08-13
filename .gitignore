@@ -39,8 +39,9 @@ jspm_packages
 .node_repl_history
 
 # Bower directory
-public/assets/lib
+abandonedProducts/public/assets/lib
 bower
 
 # garbage Mac OS X metadata .DS_Store files
 .DS_Store
+
