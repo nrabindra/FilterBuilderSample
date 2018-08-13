@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="abandonedItemApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="itemControl.js"></script>
+    <link rel="stylesheet" href="items.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+  </head>
+  <body>
+    <h2>Abandoned Items</h2>
+    <div ng-controller="ItemController">
+      <table class="table table-sm">
+      <thead>
+        <tr>
+
+          <th scope="col">Item</th>
+          <th scope="col">Carts</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in list">
+          <td>{{item.name}}</td>
+          <td>{{item.count}}</td>
+          <td><button type="button" class="btn btn-info">Start Campaign</button></td>
+        </tr>
+     
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>
